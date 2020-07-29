@@ -17,13 +17,23 @@ $(document).ready(function() {
       phone: phoneInput.val().trim(),
       password: passwordInput.val().trim()
     };
+    console.log(userData);
 
     if (!userData.email || !userData.password) {
       return;
     }
     // If we have an email and password, run the signUpUser function
-    signUpUser(userData.email, userData.password);
+    signUpUser(
+      userData.firstName,
+      userData.lastName,
+      userData.email,
+      userData.phone,
+      userData.password
+    );
+    firstNameInput.val("");
+    lastNameInput.val("");
     emailInput.val("");
+    phoneInput.val("");
     passwordInput.val("");
   });
 

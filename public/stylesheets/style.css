@@ -26,6 +26,7 @@ form.login {
   color: black;
   font-size: 16px;
   display: inline;
+  font-weight: bolder;
 }
 
 .navi-link:hover {
@@ -131,3 +132,14 @@ box-shadow: none;
 
 }
 
+
+#gardenCont{
+
+  text-align: center;
+}
+
+#shopCont{
+
+  text-align: center;
+  background-color: white;
+}

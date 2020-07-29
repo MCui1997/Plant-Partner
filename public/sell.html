@@ -3,24 +3,22 @@
 
 <head>
 
-  <title>Plant Partner My Garden</title>
+  <title>Plant Partner Sell</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
   <link href="stylesheets/style.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
 
 </head>
 
 <body>
 
-
-
     <div id="main-background"></div>
 
-    <nav class="navbar navbar-expand-lg navbar-light" href = "/members">
+    <nav class="navbar navbar-expand-lg navbar-light" href = "/sell">
 
         <a class="navbar-brand" href="/">Plant Partner</a>
 
@@ -37,36 +35,54 @@
 
     </nav>
 
-    
-    <div class = "container" id = "gardenCont">
-        <h1>My Garden</h1>
-        <div class = "row">
 
-        <div class = "col-sm-6">
-            <h2>Purchase History</h2>
-            <br>
+
+
+    <form>
+    <div class = "container">
+    <div class = "row">
+
+    <div class = "col-sm-6">
+        <div class = "form-group">
+            <label for="title">Posting Title</label>
+            <input type="" class="form-control" placeholder="Rose Lily">
         </div>
-
-        <div class = "col-sm-6">
-            <h2>Selling History</h2>
-            <br>
-        </div>
-
-        </div>
-
-
     </div>
 
 
+    <div class = "col-sm-6">
+        <div class = "form-group">
+            <label for="price">Price ($) </label>
+            <input type="" class="form-control" placeholder="0.00">
+        </div>
+    </div>
+    
+
+
+    <div class = "col-sm-12">
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea class="form-control" id="description" rows="5"></textarea>
+        </div>
+    </div>
+       
+    <div class = "col-sm-6">
+        <p><label for="file" style="cursor: pointer;">Upload Image</label></p>
+        <input type="file" accept="image/png, image/jpeg" name="image" id="file" onchange="loadFile(event)">
+        <br>
+        <br>
+        <img id="output" width="200" />	
+    </div>
+    
+    </div>
+    </div>
+    </form>
 
 
 
 
 
-     <!-- jQuery CDN - Slim version (=without AJAX) -->
-     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-     <!-- Popper.JS -->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -77,8 +93,7 @@
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script type="text/javascript" src="js/members.js"></script>
+    <script type="text/javascript" src="js/sell.js"></script>
 
 </body>
 
