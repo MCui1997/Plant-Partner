@@ -2,20 +2,27 @@
 <html lang="en">
 
 <head>
-  <title>Passport Authentication</title>
+  <title>Login</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
   <link href="stylesheets/style.css" rel="stylesheet">
 </head>
 
 <body>
 
-  <nav class="navbar navbar-default">
+  <div id="background"></div>
 
-    <div class="container-fluid">
+  <nav class="navbar navbar-expand-lg navbar-light">
 
-      <div class="navbar-header"></div>
+    <a class="navbar-brand" href="/">Plant Partner</a>
+
+    <div class="ml-md-auto">
+
+      <a class="navi-link" href="/members">My Garden<span> | </span></a>
+      <a class="navi-link" href="/signup">Sign-up</a>
 
     </div>
 
@@ -23,7 +30,7 @@
 
   <div class="container">
 
-    <div class="row">
+    <div class="row signlogRow">
 
       <div class="col-md-6 col-md-offset-3">
 
@@ -32,25 +39,21 @@
         <form class="login">
 
           <div class="form-group">
-
-            <label for="exampleInputEmail1">Email address</label>
+            <label for="email">Email address:</label>
             <input type="email" class="form-control" id="email-input" placeholder="Email">
-
           </div>
 
           <div class="form-group">
-
-            <label for="exampleInputPassword1">Password</label>
+            <label for="password">Password:</label>
             <input type="password" class="form-control" id="password-input" placeholder="Password">
-
           </div>
 
-          <button type="submit" class="btn btn-default">Login</button>
+          <button type="submit" class="btn">Login</button>
 
         </form>
         <br />
 
-        <p>Or sign up <a href="/">here</a></p>
+        <p>Or sign up <a class="navi-link" href="/signup">here</a></p>
 
       </div>
 
