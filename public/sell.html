@@ -3,14 +3,13 @@
 
 <head>
 
-  <title>Plant Partner Sell</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
-  <link href="stylesheets/style.css" rel="stylesheet">
-
+    <title>Plant Partner Sell</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link href="stylesheets/style.css" rel="stylesheet">
 
 </head>
 
@@ -18,10 +17,9 @@
 
     <div id="main-background"></div>
 
-    <nav class="navbar navbar-expand-lg navbar-light" href = "/sell">
+    <nav class="navbar navbar-expand-lg navbar-light" href="/sell">
 
         <a class="navbar-brand" href="/">Plant Partner</a>
-
 
         <div class="ml-md-auto">
 
@@ -35,54 +33,54 @@
 
     </nav>
 
+    <div class="container">
 
+        <div class="row signlogRow">
 
+            <div class="col-md-10">
 
-    <form>
-    <div class = "container">
-    <div class = "row">
+                <h2 class="sellingText">Find your Plant a new Home!</h2>
 
-    <div class = "col-sm-6">
-        <div class = "form-group">
-            <label for="title">Posting Title</label>
-            <input type="" class="form-control" placeholder="Rose Lily">
+                <form class="selling" id="sellForm">
+
+                    <div class="form-group half">
+                        <label for="title">Posting Title</label>
+                        <input type="title" class="form-control" id="title" placeholder="Rose Lily">
+                    </div>
+
+                    <div class="form-group half">
+                        <label for="price">Price ($) </label>
+                        <input type="price" class="form-control" id="price" placeholder="0.00">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea class="form-control" id="description" rows="5" placeholder="Please be"></textarea></textarea>
+                    </div>
+
+                    <div class="form-group half">
+                        <label for="img-url">Image URL</label>
+                        <input type="img-url" class="form-control" id="imgURL" placeholder="https://imgur.com/upload">
+                    </div>
+
+                    <!-- <div class="col-sm-6">
+                    <p><label for="file" style="cursor: pointer;">Upload Image</label></p>
+                    <input type="file" accept="image/png, image/jpeg" name="image" id="file" onchange="loadFile(event)">
+                    <br>
+                    <br>
+                    <img id="output" width="200" />
+                </div> -->
+
+                    <button type="submit" class="btn">Sell Plant!</button>
+
+                </form>
+
+            </div>
+
         </div>
+
     </div>
 
-
-    <div class = "col-sm-6">
-        <div class = "form-group">
-            <label for="price">Price ($) </label>
-            <input type="" class="form-control" placeholder="0.00">
-        </div>
-    </div>
-    
-
-
-    <div class = "col-sm-12">
-        <div class="form-group">
-            <label for="description">Description</label>
-            <textarea class="form-control" id="description" rows="5"></textarea>
-        </div>
-    </div>
-       
-    <div class = "col-sm-6">
-        <p><label for="file" style="cursor: pointer;">Upload Image</label></p>
-        <input type="file" accept="image/png, image/jpeg" name="image" id="file" onchange="loadFile(event)">
-        <br>
-        <br>
-        <img id="output" width="200" />	
-    </div>
-    
-    </div>
-    </div>
-    </form>
-
-
-
-
-
-  
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>

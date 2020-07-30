@@ -29,6 +29,32 @@ module.exports = function(app) {
       });
   });
 
+  
+  // Route for getting some data about our user to be used client side
+  app.get("/api/sell_data", function(req, res) {
+    db.Plant.findAll({}).then(function(dbPlant) {
+      // We have access to the todos as an argument inside of the callback function
+      res.json(dbPlant);
+
+      
+    });
+  });
+
+
+  app.post("/api/sell", function(req, res) {    
+    db.Plant.create({
+      plantName: req.body.plantName,
+      price: req.body.price,
+      description: req.body.description,
+      imgURL: req.body.imgUrl
+    }).then(function(dbPlant) {
+      res.json(dbPlant);
+    });
+  });
+
+
+
+
   // Route for logging user out
   app.get("/logout", function(req, res) {
     req.logout();
@@ -48,4 +74,8 @@ module.exports = function(app) {
       });
     }
   });
+
+
+  
+
 };

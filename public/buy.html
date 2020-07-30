@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="stylesheets/style.css" rel="stylesheet">
 
 
@@ -36,30 +37,43 @@
     </nav>
 
     <div class = "container" id = "shopCont">
-        <h1>Shop</h1>
         <div class = "row">
             <div class = "col-sm-12">
             <div class="card text-center">
-                <div class="card-header">
+                <div class="card-header"><h1>Shop</h1>
                   <ul class="nav nav-tabs card-header-tabs">
+
+                    <li class="nav-item" id = "searchbar">
+                        <div class="input-group md-form form-sm form-1 pl-0">
+                          <div class="input-group-prepend">
+                            <button class="input-group-text cyan lighten-2" id="basic-text1"><i class="fa fa-search text-white"
+                                aria-hidden="true"></i></button>
+                          </div>
+                          <input class="form-control my-0 py-1" type="text" placeholder="Search" aria-label="Search">
+                        </div>
+                        </li>
+
+                        
                     <li class="nav-item">
-                      <a class="nav-link active" href="#">Active</a>
+                      <a class="nav-link active" href="#">Recent</a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Price (high-low)</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link active" href="#">Price (low-high)</a>
+                      </li>
+
+                
+
                   </ul>
                 </div>
+
                 <div class="card-body">
-
-                    <div class="card" style="width: 18rem;">
-                        <img src="/assets/Prayer-Plant.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Plant Name</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                                the card's content. (min:1 max:140)</p>
-                            <a href="#" class="btn">Go somewhere</a>
-                        </div>
-                    </div>
-
-
+                      
+                            <div id = "plant-name" class = "container"></div>
 
                 </div>
               </div>
@@ -83,7 +97,7 @@
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/sell.js"></script>
+    <script type="text/javascript" src="js/buy.js"></script>
 
 </body>
 

@@ -86,6 +86,10 @@ box-shadow: none;
   object-fit: cover;
 }
 
+.half {
+  width: 50%;
+}
+
 #background {
   position: fixed;
   top: 0;
@@ -143,3 +147,4 @@ box-shadow: none;
   text-align: center;
   background-color: white;
 }
+
