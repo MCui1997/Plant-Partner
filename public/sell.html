@@ -20,6 +20,8 @@
     <nav class="navbar navbar-expand-lg navbar-light" href="/sell">
 
         <a class="navbar-brand" href="/">Plant Partner</a>
+        <h4 class = "wallet-name"></h4>
+
 
         <div class="ml-md-auto">
 
@@ -37,30 +39,45 @@
 
         <div class="row signlogRow">
 
-            <div class="col-md-10">
+            <div class="col-sm-12">
+            <div class = "card text-center sell-text">
 
-                <h2 class="sellingText">Find your Plant a new Home!</h2>
+                <div class="card-header sell-text"><h2 class="sellingText">Find your Plant a new Home!</h2></div>
 
+                
+                    <div class = "card-body">
                 <form class="selling" id="sellForm">
 
-                    <div class="form-group half">
+                    <div class = "row">
+                        
+                    <div class = "col-sm-6">
+                    <div class="form-group">
                         <label for="title">Posting Title</label>
                         <input type="title" class="form-control" id="title" placeholder="Rose Lily">
                     </div>
+                    </div>
 
-                    <div class="form-group half">
+                    <div class = "col-sm-6">
+                    <div class="form-group">
                         <label for="price">Price ($) </label>
                         <input type="price" class="form-control" id="price" placeholder="0.00">
                     </div>
+                    </div>
+                    </div>
 
+                    <div class = "row">
+                        <div class = "col-sm-12">
+                        
                     <div class="form-group">
                         <label for="description">Description</label>
                         <textarea class="form-control" id="description" rows="5" placeholder="Please be"></textarea></textarea>
                     </div>
+                    </div>
+                </div>
 
                     <div class="form-group half">
                         <label for="img-url">Image URL</label>
-                        <input type="img-url" class="form-control" id="imgURL" placeholder="https://imgur.com/upload">
+                        <input type="img-url" class="form-control" id="imgURL" placeholder="https://imgur.com/upload.jpg">
                     </div>
 
                     <!-- <div class="col-sm-6">
@@ -74,9 +91,11 @@
                     <button type="submit" class="btn">Sell Plant!</button>
 
                 </form>
+                </div>
 
             </div>
 
+        </div>
         </div>
 
     </div>
@@ -92,6 +111,7 @@
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/sell.js"></script>
+    <script type="text/javascript" src="js/members.js"></script>
 
 </body>
 

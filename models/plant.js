@@ -5,7 +5,7 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        min: [1]
+        min: 1
       }
     },
     price: {
@@ -19,7 +19,7 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.TEXT,
       allowNull: false,
       validate: {
-        min: [1],
+        min: 1,
       }
     },
     imgURL: {
@@ -29,6 +29,10 @@ module.exports = function (sequelize, DataTypes) {
         isUrl: true,
       }
     },
+    sold: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    }
   });
 
   Plant.associate = function(models) {

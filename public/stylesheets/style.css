@@ -90,6 +90,11 @@ box-shadow: none;
   width: 50%;
 }
 
+.sell-text {
+  background: transparent;
+  border: transparent;
+}
+
 #background {
   position: fixed;
   top: 0;

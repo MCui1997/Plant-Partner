@@ -15,13 +15,20 @@ $(document).ready(function() {
       description: descriptionInput.val().trim(),
       imgUrl: imgUrlInput.val().trim()
     };
-    console.log(itemData);
 
+    if (!itemData.plantName || !itemData.price || !itemData.description || !itemData.imgUrl) {
+      alert("Oops! Something is missing. Please fill out all fields.");
+      return;
+    }
+
+    
+    $("input#title").val("");
+    $("input#price").val("");
+    $("textarea#description").val("");
+    $("input#imgURL").val("");
     
     $.post("/api/sell", itemData);
     // On success, run the following code
-    
-
   });
 
     

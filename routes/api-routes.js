@@ -19,7 +19,8 @@ module.exports = function(app) {
       lastName: req.body.lastName,
       email: req.body.email,
       phone: req.body.phone,
-      password: req.body.password
+      password: req.body.password,
+      wallet: req.body.wallet
     })
       .then(function() {
         res.redirect(307, "/api/login");
@@ -28,32 +29,6 @@ module.exports = function(app) {
         res.status(401).json(err);
       });
   });
-
-  
-  // Route for getting some data about our user to be used client side
-  app.get("/api/sell_data", function(req, res) {
-    db.Plant.findAll({}).then(function(dbPlant) {
-      // We have access to the todos as an argument inside of the callback function
-      res.json(dbPlant);
-
-      
-    });
-  });
-
-
-  app.post("/api/sell", function(req, res) {    
-    db.Plant.create({
-      plantName: req.body.plantName,
-      price: req.body.price,
-      description: req.body.description,
-      imgURL: req.body.imgUrl
-    }).then(function(dbPlant) {
-      res.json(dbPlant);
-    });
-  });
-
-
-
 
   // Route for logging user out
   app.get("/logout", function(req, res) {
@@ -70,7 +45,8 @@ module.exports = function(app) {
       // Otherwise send back the user's email and id
       res.json({
         email: req.user.email,
-        id: req.user.id
+        id: req.user.id,
+        wallet: req.user.wallet
       });
     }
   });
