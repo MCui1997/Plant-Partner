@@ -1,3 +1,5 @@
+var response = require("express");
+
 // Construct results information
 var commonName = $("<h2>").text(response.data.common_name);
 var slug = $("<p>").text(response.data.slug);
@@ -17,10 +19,17 @@ $(".btn").on("click", function (event) {
   /* eslint-disable no-unused-vars */
   var searchQuery = $(".searchBar").val().trim();
 
+  fetch("https://trefle.io/api/v1/plants/search?token=fQwi4uQ6I6jf1791HHjEbmq1ZN24DWX-JReOLd8qNb0&q=" + req.params.id)
+  .then(response(function() {
+    response.json()
+    .then(data(function() {
+      console.log(JSON.stringify(data))
+    }),
+  }))
+});
+
   // Run searchPlants function
   searchPlants();
-
-});
 
 
 /*

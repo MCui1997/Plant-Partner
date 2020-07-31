@@ -30,71 +30,52 @@
       <a class="navi-link" href="/sell">Sell<span> | </span></a>
       <a class="navi-link" href="/members">My Garden<span> | </span></a>
       <a class="navi-link" href="/login">Login<span> | </span></a>
-      <a class="navi-link" href="/signup">Sign-up</a>
+      <a class="navi-link" href="/signup">Sign-up<span> | </span></a>
+      <a class="navi-link" href="/logout">Logout</a>
 
     </div>
 
   </nav>
 
-  <div class="container" id="shopCont">
+  <div class = "row">
+    <div class = "col-sm-12">
+      <div class="container" id="shopCont">
 
-    <div class="row">
+    <div class="row" id = "searchRow">
+      <h1>Shop</h1>
+    </div>
 
-      <div class="col-sm-12">
+      <div class = "row">
+      <div class = "col-sm-4">
+           
+         
 
-        <div class="card text-center sell-text">
-
-          <div class="card-header sell-text">
-
-            <h1>Shop</h1>
-
-            <ul class="nav nav-tabs card-header-tabs">
-
-              <li class="nav-item" id="searchbar">
-
-                <div class="input-group md-form form-sm form-1 pl-0">
-
-                  <div class="input-group-prepend">
-                    <button class="input-group-text cyan lighten-2" id="btn-color"><i class="fa fa-search text-black"
-                        aria-hidden="true"></i></button>
-                  </div>
-
-                  <input class="form-control my-0 py-1" type="text" placeholder="Search" aria-label="Search"
+                  <input class="form-control my-0 py-1" type="text" placeholder="Search Filter" aria-label="Search"
                     id="searchBarFilt">
 
+      
                 </div>
 
-              </li>
+    </div>
+  
+  
 
-              <li class="nav-item">
-                <a class="nav-link active buy-nav" href="#">Recent</a>
-              </li>
+    <div class = "row">
+      <div class = "col-sm-12">
 
-              <li class="nav-item">
-                <a class="nav-link active buy-nav" href="#">Price (high-low)</a>
-              </li>
+        <div class="container">
 
-              <li class="nav-item">
-                <a class="nav-link active buy-nav" href="#">Price (low-high)</a>
-              </li>
-
-            </ul>
-
-          </div>
-
-          <div class="card-body buy-card">
-
-            <div id="plant-name" class="container"></div>
-
-          </div>
+          <div id="plant-name" class="container"></div>
 
         </div>
 
       </div>
-
     </div>
-
+         
   </div>
+</div>
+</div>
+
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -107,7 +88,7 @@
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/buy.js"></script>
-  <script type="text/javascript" src="js/members.js"></script>
+
 
 </body>
 

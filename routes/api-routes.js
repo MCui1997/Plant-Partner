@@ -1,7 +1,7 @@
 // Requiring our models and passport as we've configured it
 var db = require("../models");
 var passport = require("../config/passport");
-var axios = require("axios");
+// var axios = require("axios");
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -31,11 +31,6 @@ module.exports = function(app) {
       });
   });
 
-  // Route for logging user out
-  app.get("/logout", function(req, res) {
-    req.logout();
-    res.redirect("/");
-  });
 
   // Route for getting some data about our user to be used client side
   app.get("/api/user_data", function(req, res) {
@@ -68,18 +63,19 @@ module.exports = function(app) {
 
 
     db.User.update({
-      wallet: req.body.wallet
+      wallet: req.body.wallet,
     },{
       where: {
         id: req.user.id
       }
     }).then(function() {
+
+      req.session.passport.user.wallet = req.body.wallet;
       res.json();
       
     });
    
   });
-
 
 
 

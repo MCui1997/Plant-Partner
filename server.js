@@ -30,6 +30,7 @@ require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 require("./routes/sell-routes.js")(app);
 require("./routes/buy-routes.js")(app);
+require("./routes/info-routes.js")(app);
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(function () {

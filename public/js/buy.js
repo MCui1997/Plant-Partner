@@ -3,16 +3,45 @@
 /* eslint-disable unexpected character */
 $(document).ready(function () {
 
+  var userid = 0;
+
+  $("#searchBarFilt").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $(".card").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    }); 
+  });
+
+  $.get("api/user_data").then(function(data){
+
+    userid = data.id;
+  })
+
+
   getPlants();
   newWallet();
 
 
-// If purchase btn clicked
-$(document).on("click",".buy-btn", function(){
 
-  var id = this.id
-  getPrice(id)
+//if purchased change sold to true
+$(document).on("click", ".buy-btn", function() {
 
+  var id = this.id;
+
+  //This checks to see if they are trying to buy their own item
+  $.get("/api/price/" +id).then(function(data) {
+    
+    if (data.id === userid){
+
+      alert("Can't buy your own item");
+    }
+    else{
+      
+      //Allow them to purchase
+      getPrice(id);
+    }
+
+  });
 });
 
 // function to get price of the selected plant
@@ -43,16 +72,11 @@ function checkout(newPrice,balance,id){
     var newBalance = balance - newPrice;
     updateWallet(newBalance);
 
-    $.ajax({
-    method: "DELETE",
-    url: "/api/buy/" + id
-    }).then(getPlants);
-
 
   }
   //unable to buy
   else{
-    console.log("Not enough funds");
+    alert("Not enough funds");
   }
 }
 
@@ -64,10 +88,11 @@ function updateWallet(newBalance) {
     url: "/api/wallet",
     data: {
       wallet: newBalance}
-  }).then(newWallet);
+  }).then(location.reload());
 
 }
 
+//Get the balance of the wallet and display
 function newWallet(){
 
   $.get("/api/wallet").then(function(data) {
@@ -84,27 +109,51 @@ function getPlants() {
 
     var html = "";
 
+    // if (data.sold === 0) {
     for (var a = 0; a < data.length; a++) {
 
       var templateString = '<h2>' + (Object.values(data[a].plantName).join('')) + '</h2><h4 id = "pricetag"> $ ' + Object.values(data[a].price).join('') + '</h4><p>' + Object.values(data[a].description).join('');
       var newImg = (Object.values(data[a].imgURL).join(''));
       var newId = data[a].id;
-  
 
       html += `      
-           <div class="col-4">
+           <div class="col-sm-4">
             <div class="card" style="width:20em;text-align:center;display:inline-block;"  id = "generatedCards">
-            <img class = "card-img-top" src = "`+ newImg + `">
+            <img class = "card-img-top" src = "`+ newImg +`">
                  <div class="card-body">
                  `+ templateString + `
                  <br>
-                 <button class = "buy-btn" id = "`+newId+`">Purchase</button>
+                 <button class="btn buy-btn" id = "`+newId+`">Purchase</button>
                 </div>
               </div>
         </div>`;
     };
-    $('#plant-name').append(`<div class="row">` + html + `</div>`);
-  });
-}
+    $('#plant-name').append(`<div class="row">`+ html +`</div>`);
+  }); 
+//   else {
+//     for (var a = 0; a < data.length; a++) {
 
+//       var templateString = '<h2>' + (Object.values(data[a].plantName).join('')) + '</h2><h4> $ ' + Object.values(data[a].price).join('') + '</h4><p>' + Object.values(data[a].description).join('');
+//       var newImg = (Object.values(data[a].imgURL).join(''));
+//       var newId = data[a].id;
+
+//       html += `      
+//            <div class="col-4">
+//             <div class="card" style="width:20em;text-align:center;display:inline-block;"  id = "generatedCards">
+//             <img class = "card-img-top" src = "`+ newImg +`">
+//                  <div class="card-body">
+//                  `+ templateString + `
+//                  <br>
+//                  <button class="btn buy-btn" id = "`+newId+`">Purchase</button>
+//                 </div>
+//               </div>
+//         </div>`;
+//     };
+//     $('#sold-plant').append(`<div class="row">`+ html +`</div>`);
+
+// }
+
+// });
+// }
+}
 });
