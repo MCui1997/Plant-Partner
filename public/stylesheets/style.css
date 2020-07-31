@@ -1,5 +1,6 @@
 body {
   font-family: 'Raleway', sans-serif;
+  font-weight: bold;
 }
 
 label {
@@ -22,6 +23,10 @@ form.login {
   margin-bottom: 20px;
 }
 
+.nav-item {
+  margin-left: 10px;
+}
+
 .navi-link {
   color: black;
   font-size: 16px;
@@ -33,6 +38,16 @@ form.login {
   text-decoration: none;
   font-size: 150%;
   color: #CB997E;
+}
+
+.nav-tabs .nav-link.active {
+  color: black;
+}
+
+.buy-nav {
+  background-color: #CB997E !important;
+  border-color: #CB997E !important;
+  color: black;
 }
 
 .signupText {
@@ -93,6 +108,11 @@ box-shadow: none;
 .sell-text {
   background: transparent;
   border: transparent;
+}
+
+#btn-color {
+  background-color: #CB997E;
+  border-color: #CB997E;
 }
 
 #background {
