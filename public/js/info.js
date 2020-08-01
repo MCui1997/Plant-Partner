@@ -1,73 +1,62 @@
-var response = require("express");
+/* eslint-disable no-unused-vars */
+// var express = require("express");
+var baseUrl = "https://cors-anywhere.herokuapp.com/https://trefle.io/api/v1/plants/search?token=";
+var apiToken = "fQwi4uQ6I6jf1791HHjEbmq1ZN24DWX-JReOLd8qNb0";
 
-// Construct results information
-var commonName = $("<h2>").text(response.data.common_name);
-var slug = $("<p>").text(response.data.slug);
-var scientificName = $("<p>").text(response.data.scientific_name);
-var yrPublishedAsSpecies = $("<p>").text(response.data.year);
-var synonyms = $("<p>").text(response.data.synonyms);
-var family = $("<p>").text(response.data.family);
-var img = $("<img>").attr(response.data.img_url);
+$(document).ready(function () {
 
-// Empty search contents
-$(".searchBar").empty();
-$(".queryResults").append(commonName, slug, scientificName, yrPublishedAsSpecies, synonyms, family, img);
+  // Event listener for when search button is clicked
+  $(".btn").on("click", function (event) {
+    event.preventDefault();
+    /* eslint-disable no-unused-vars */
+    var searchQuery = $(".searchBar").val();
+    searchPlants();
 
-// Event listener for when search button is clicked
-$(".btn").on("click", function (event) {
-  event.preventDefault();
-  /* eslint-disable no-unused-vars */
-  var searchQuery = $(".searchBar").val().trim();
+    function searchPlants() {
+      var queryUrl = baseUrl + apiToken + "&q=" + searchQuery;
+      console.log(queryUrl);
 
-  fetch("https://trefle.io/api/v1/plants/search?token=fQwi4uQ6I6jf1791HHjEbmq1ZN24DWX-JReOLd8qNb0&q=" + req.params.id)
-  .then(response(function() {
-    response.json()
-    .then(data(function() {
-      console.log(JSON.stringify(data))
-    }),
-  }))
+      // AJAX call
+
+      fetch(queryUrl)
+        .then(function(response) {
+
+          if(response.ok){
+
+            $.ajax({
+              url: queryUrl,
+              method: "GET"
+            }).then(function (response) {
+              console.log(response);
+            
+
+              // Construct results information
+              var commonName = response.data.common_name;
+              var slug = response.data.slug;
+              var scientificName = response.data.scientific_name;
+              var yrPublishedAsSpecies = response.data.year;
+              var synonyms = response.data.synonyms;
+              var family = response.data.family;
+              var imgPlant = response.data.img_url;
+
+              $(".commonName").text(response.data.common_name);
+              $(".slug").text(response.data.slug);
+              $(".scientificName").text(response.data.scientific_name);
+              $(".yrPublishedAsSpecies").text(response.data.year);
+              $(".synonyms").text(response.data.synonyms);
+              $(".family").text(response.data.family);
+              $("#imgPlant").attr("src", img_url);
+
+              // Clear search results
+              $(".searchBar").empty();
+              $(".queryResults").append(commonName, slug, scientificName, yrPublishedAsSpecies, synonyms, family, img);
+            });
+          }
+        });
+
+    }
+
+
+  });
+
 });
-
-  // Run searchPlants function
-  searchPlants();
-
-
-/*
-"id": 678281,
-"common_name": "Evergreen Oak",
-"slug": "quercus-rotundifolia",
-"scientific_name": "Quercus rotundifolia",
-"year": 1785,
-"bibliography": "Encycl. 1: 723 (1785)",
-"author": "Lam.",
-"status": "accepted",
-"rank": "species",
-"family_common_name": null,
-"genus_id": 5778,
-"image_url": "https://bs.floristic.org/image/o/1a03948baf0300da25558c2448f086d39b41ca30",
-"synonyms": [
-"Quercus rotundifolia var. macrocarpa",
-"Quercus rotundifolia f. brevicupulata",
-"Quercus rotundifolia subsp. maghrebiana",
-"Quercus rotundifolia var. brevicupulata",
-"Quercus rotundifolia var. pilosella",
-"Quercus ilex subsp. ballota",
-"Quercus ilex f. macrocarpa",
-"Quercus rotundifolia f. calycina",
-"Quercus rotundifolia f. macrocarpa",
-"Quercus rotundifolia f. pilosella",
-"Quercus rotundifolia f. dolichocalyx",
-"Quercus calycina",
-"Quercus ilex f. brevicupulata",
-"Quercus ballota",
-"Quercus rotundifolia f. crassicupulata",
-"Quercus lyauteyi"
-],
-"genus": "Quercus",
-"family": "Fagaceae",
-"links": {
-"self": "/api/v1/species/quercus-rotundifolia",
-"plant": "/api/v1/plants/quercus-rotundifolia",
-"genus": "/api/v1/genus/quercus"
-
-*/

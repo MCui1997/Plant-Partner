@@ -40,6 +40,43 @@ module.exports = function(app) {
       });
     });
   });
+
+  // Route for getting some data about our plant to be used client side
+  app.get("/api/wallet/:id", function(req, res) {
+
+    console.log(req.params.id);
+
+    db.User.findOne({
+
+      where:{
+        id: req.params.id
+      }
+    }).then(function(dbWallet) {
+      res.json({
+        wallet: dbWallet.wallet
+      });
+    });
+  });
+
+
+  // PUT route for updating wallet balance
+  app.put("/api/sellerwallet", function(req, res) {
+
+
+    db.User.update({
+      wallet: req.body.wallet,
+    },{
+      where: {
+        id: req.body.id
+      }
+    }).then(function() {
+
+      res.json();
+      
+    });
+    
+  });
+  
   
   
 };

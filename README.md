@@ -5,7 +5,7 @@
 A website for plant connoisseurs everywhere!
 Plant Partner is a place to buy and sell plants with a sign up and login to save user information and plants for sale or purchased. It will use the Trefle api to gather information and photos of the selected plant. All information will be saved to a database for future usage.
 
-[Deployed](https://ancient-waters-57697.herokuapp.com/)
+Deployed: 
 
 ## User Story
 ```
