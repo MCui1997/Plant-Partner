@@ -31,7 +31,6 @@ module.exports = function(app) {
       });
   });
 
-
   // Route for getting some data about our user to be used client side
   app.get("/api/user_data", function(req, res) {
     if (!req.user) {
@@ -57,10 +56,8 @@ module.exports = function(app) {
 
   });
 
-
   // PUT route for updating wallet balance
   app.put("/api/wallet", function(req, res) {
-
 
     db.User.update({
       wallet: req.body.wallet,
@@ -76,9 +73,6 @@ module.exports = function(app) {
     });
    
   });
-
-
-
 
   app.get("/api/plant/:id", function(req, res) {
     axios.get("https://trefle.io/api/v1/plants/search?token=" + "fQwi4uQ6I6jf1791HHjEbmq1ZN24DWX-JReOLd8qNb0" + "&q=")

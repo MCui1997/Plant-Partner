@@ -17,6 +17,7 @@ module.exports = function(app) {
     });
   });
 
+
   app.post("/api/sell", function(req, res) {    
     db.Plant.create({
       plantName: req.body.plantName,
