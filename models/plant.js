@@ -32,6 +32,9 @@ module.exports = function (sequelize, DataTypes) {
     sold: {
       type: DataTypes.BOOLEAN,
       defaultValue: false
+    },
+    buyerId: {
+      type: DataTypes.STRING
     }
   });
 

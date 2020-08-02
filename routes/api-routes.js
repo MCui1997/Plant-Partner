@@ -21,7 +21,7 @@ module.exports = function(app) {
       email: req.body.email,
       phone: req.body.phone,
       password: req.body.password,
-      wallet: req.body.wallet
+      wallet: req.body.wallet,
     })
       .then(function() {
         res.redirect(307, "/api/login");

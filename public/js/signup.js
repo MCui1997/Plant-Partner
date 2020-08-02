@@ -51,7 +51,7 @@ $(document).ready(function() {
       email: email,
       phone: phone,
       password: password,
-      wallet: wallet
+      wallet: wallet,
     })
       .then(function() {
         window.location.replace("/members");
