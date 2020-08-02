@@ -28,3 +28,19 @@ LOCALDB_URL=mysql://root:dbpassword@localhost:3306/Project2Dev
 ```
 
 ## Screenshots
+
+1. Main Page 
+
+![Alt text](/screenshots/main.PNG "Optional Title")
+
+2. Singup Page
+
+![Alt text](/screenshots/signup.PNG "Optional Title")
+
+3. Sell Page
+
+![Alt text](/screenshots/sell.PNG "Optional Title")
+
+4. Shop Page
+
+![Alt text](/screenshots/buy.PNG "Optional Title")
