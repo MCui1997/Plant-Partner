@@ -44,6 +44,18 @@ form.login {
   color: #CB997E;
 }
 
+.info-link {
+  color: white;
+  font-size: 24px;
+  font-weight: bolder;
+}
+
+.info-link:hover {
+  text-decoration: none;
+  font-size: 150%;
+  color: white;
+}
+
 .nav-tabs .nav-link.active {
   color: black;
 }
@@ -67,6 +79,15 @@ font-size: 36px;
 box-shadow: none;
 }
 
+.info-form {
+  justify-content: center;
+  text-align: center;
+}
+
+.info-row {
+  justify-content: center;
+}
+
 .btn {
   background-color: #CB997E;
   font-size: 20px;
@@ -82,9 +103,13 @@ box-shadow: none;
 }
 
 .main-img {
-  width: 150%;
+  width: 100%;
   border-style: double;
   margin-bottom: 20px;
+}
+
+.main-row {
+  text-align: end;
 }
 
 .card {
@@ -106,7 +131,7 @@ box-shadow: none;
 
 .card-img-top {
   width: 100%;
-  height: 20vw;
+  height: 12vw;
   object-fit: cover;
   transition: transform .2s;
 }
@@ -117,6 +142,16 @@ box-shadow: none;
   border: 1px solid black;
 }
 
+.card-body {
+  background-color: #F0EFEB;
+}
+
+.card-info {
+  background-color: rgb(240, 239, 235, 0.6);
+  border: none;
+  border-radius: 5px;
+}
+
 .half {
   width: 50%;
 }
@@ -124,6 +159,10 @@ box-shadow: none;
 .sell-text {
   background: transparent;
   border: transparent;
+}
+
+.sell-card {
+  background: transparent;
 }
 
 .queryResults {
@@ -141,21 +180,44 @@ box-shadow: none;
 }
 
 .searchBar {
-  width: 800px;
+  width: 80%;
   height: 40px;
+  border: none;
+  border-radius: 5px;
 }
 
-.form-inline {
-  text-align: center;
+.info-card {
+  background: transparent;
+  border: none;
+}
+
+.info-text {
+font-size: 20px;
+}
+
+.info-btn {
+  margin-bottom: 10px;
+  background-color: #2d6a4f;
+  border-color: #2d6a4f;
 }
 
 .plantPic {
   width: 200px;
   height: 200px;
+  border-radius: 10px;
 }
 
 .for-sale {
   justify-content: center;
+}
+
+.search-btn {
+  margin-left: 10px;
+}
+
+#wikitext {
+  padding: 20px;
+  font-size: 20px;
 }
 
 #btn-color {
@@ -165,6 +227,32 @@ box-shadow: none;
 
 #plant-name {
   display: flex;
+}
+
+#gardenCont{
+  text-align: center;
+}
+
+#searchRow{
+  display: flex;
+  justify-content:center;
+}
+
+#search {
+  padding: 10px;
+}
+
+#plant-name{
+  margin-top: 50px;
+}
+
+#imgCont{
+  text-align: center;
+}
+
+#imgwrapper{
+  display: flex;
+  justify-content: center;
 }
 
 #background {
@@ -213,32 +301,4 @@ box-shadow: none;
 
 }
 
-
-#gardenCont{
-
-  text-align: center;
-}
-
-
-#searchRow{
-
-  display: flex;
-  justify-content:center;
-}
-
-#plant-name{
-
-  margin-top: 50px;
-}
-
-#imgCont{
-
-  text-align: center;
-}
-
-#imgwrapper{
-
-  display: flex;
-  justify-content: center;
-}
 

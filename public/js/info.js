@@ -5,8 +5,11 @@ var apiToken = "fQwi4uQ6I6jf1791HHjEbmq1ZN24DWX-JReOLd8qNb0";
 
 $(document).ready(function () {
 
+  searchPlants("lily");
+  searchWiki("lily");
+
   // Event listener for when search button is clicked
-  $(".btn").on("click", function (event) {
+  $(".search-btn").on("click", function (event) {
     event.preventDefault();
     var searchQuery = $(".searchBar").val();
     searchWiki(searchQuery);
@@ -34,28 +37,24 @@ $(document).ready(function () {
 
             for (var i = 0; i < results.length; i++) {
 
-
               var plantImg = $("<Img>");
-              plantImg.attr("src", results[i].image_url)
+              plantImg.attr({ src: results[i].image_url, class: "plantPic" })
                 .width("200px").height("200px");
 
-              var plantDiv = $("<div>");
-              var pCommon = $("<p>").text("Common Name: " + results[i].common_name);
-              var pSci = $("<p>").text("Scientific Name: " + results[i].scientific_name);
-              var pFamily = $("<p>").text("Family Name: " + results[i].family_common_name);
-              
+              var plantDiv = $("<div>").attr("class", "card-info");
+              var pCommon = $("<p>").attr("class", "info-text").text("Common Name: " + results[i].common_name);
+              var pSci = $("<p>").attr("class", "info-text").text("Scientific Name: " + results[i].scientific_name);
+              var pFamily = $("<p>").attr("class", "info-text").text("Family Name: " + results[i].family_common_name);
+
               plantDiv.append(plantImg);
               plantDiv.append(pCommon);
               plantDiv.append(pSci);
               plantDiv.append(pFamily);
-              
 
-              $(".plantPic").prepend(plantDiv);
-              $(".commonName").prepend(plantDiv);
+              $(".plantPic").prepend(plantDiv); 
               $(".scientificName").prepend(plantDiv);
               $(".family-text").prepend(plantDiv);
               $(".break").prepend(plantDiv);
-             
 
               // Construct results information
               var imgPlant = response.data[i].image_url;
@@ -68,7 +67,6 @@ $(document).ready(function () {
               $(".scientificName-text").text("Scientific Name: " + scientificName);
               $(".family-text").text("Family Common Name: " + family);
 
-      
             }
           });
         }
@@ -78,9 +76,9 @@ $(document).ready(function () {
 
 
 
-  function searchWiki(searchQuery){
+  function searchWiki(searchQuery) {
 
-    var url = "https://en.wikipedia.org/api/rest_v1/page/summary/"+ searchQuery;
+    var url = "https://en.wikipedia.org/api/rest_v1/page/summary/" + searchQuery;
 
     fetch(url)
       .then(function (response) {
@@ -104,8 +102,8 @@ $(document).ready(function () {
       });
 
 
- 
-    
+
+
   }
 
 

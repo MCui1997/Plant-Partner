@@ -28,53 +28,53 @@
             <a class="navi-link" href="/members">My Garden<span> | </span></a>
             <a class="navi-link" href="/login">Login<span> | </span></a>
             <a class="navi-link" href="/signup">Sign-up<span> | </span></a>
-            <a class="navi-link" href="/info">Info<span> | </span></a>
             <a class="navi-link" href="/logout">Logout</a>
 
         </div>
 
     </nav>
 
-   
     <div class="container">
 
-        <h1>Green Learning Space</h1>
+        <div class="row info-row">
 
-        <nav class="navbar navbar-light bg-light">
-            <nav class="navbarSearch">
-            <form class="form-inline">
-                <input class="searchBar" type="search" placeholder="Search for a specific plant" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-            </nav>
-        </nav>
+            <div class="col-md-10">
 
-    </div>
+                <h1>Green Learning Space</h1>
 
-
-   
-    <div class="row queryResults">
-        
-
-        <div class="card" style="width: 50rem;">
-            <a id = "wikiLink" href = "" target = "_blank" style = "text-align: center;">WikiLink</a>
-            <br>
-            <p id = "wikitext"></p>
-            <div class="card-body">
-                <img id="imgPlant" class="plantPic" display = "none">;
-                <p class="commonName-text"></p>
-                <p class="scientificName-text"></p>
-                <p class="family-text"></p>
-            <div class="break"></div>
+                <form class="form-inline info-form">
+                    <input type="search" class="searchBar" id="search" placeholder="Search for plants..."
+                        aria-label="Search">
+                    <button class="btn search-btn inline" type="submit">Search</button>
+                </form>
 
             </div>
-            <!-- <table><tr><td><blockquote><form method='GET' target='plants' action='http://www.gardenology.org/wiki/Special:Search?search='> <a href=http://www.gardenology.org><img src=http://www.gardenology.org/w/images/3/35/Pom-logo-47h.png align=left alt="Gardenology.org" border=0></a><font size=+1 face="Arial, Geneva">Search <a href='http://www.gardenology.org' target='gardenology'><font color='IndianRed' face="Arial, Geneva">Gardenology.org</font></a></font></a><br><B> <input name='search' size=12 > <input type='submit' value='Go!' style='font-size: 8pt'></td></tr></table> -->
+
         </div>
 
     </div>
 
+    <div class="row queryResults">
 
-  
+        <div class="card card-info" style="width: 50rem;">
+
+            <a id="wikiLink" href="" target="_blank" style="text-align: center;">WikiLink</a>
+            <br>
+
+            <p id="wikitext" class="info-text"></p>
+
+            <div class="card-body card-info">
+                <img id="imgPlant" class="plantPic" display="none">;
+                <p class="commonName-text info-text"></p>
+                <p class="scientificName-text info-text"></p>
+                <p class="family-text info-text"></p>
+                <div class="break"></div>
+
+            </div>
+
+        </div>
+
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
