@@ -22,7 +22,7 @@ Features
 ```
 * Users can purchase or sell plants
 * Plants will then populate buy or sell history
-* Wallet will update (Please keep in mind wallet balance cannot decreased under 100 or exceed 1000)
+* Wallet will update (Please keep in mind wallet balance cannot decrease under 100 or exceed 1000)
 * Search function for more information on plants
 * Recently sold function on index page
 ```
