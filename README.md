@@ -8,18 +8,24 @@ Plant Partner is a place to buy and sell plants with a sign up and login to save
 Collaborators: [Kinzito17](https://github.com/Kinzito17) and [Jaesenix](https://github.com/Jaesenix)
 
 ## Technologies and Features
+
+Technologies
+```
 * Treffle API
 * Wiki API
 * Node.js
 * Sequelize
 * Passport.js
 * Restful API's and jQuery
-
+```
+Features
+```
 * Users can purchase or sell plants
 * Plants will then populate buy or sell history
 * Wallet will update (Please keep in mind wallet balance cannot decreased under 100 or exceed 1000)
 * Search function for more information on plants
 * Recently sold function on index page
+```
 
 ## User Story
 ```
