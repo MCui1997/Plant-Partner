@@ -13,6 +13,7 @@ module.exports = function (app) {
   // Route for getting some data about our plant to be used client side
   app.get("/api/sell_data", function (req, res) {
     db.Plant.findAll({}).then(function (dbPlant) {
+      console.log(req);
       res.json(dbPlant);
     });
   });
@@ -25,7 +26,7 @@ module.exports = function (app) {
       description: req.body.description,
       imgURL: req.body.imgUrl,
       UserId: req.user.id,
-      buyerId: req.body.buyerId
+      buyerId: req.body.buyerId,
     }).then(function (dbPlant) {
       res.json(dbPlant);
     });

@@ -8,7 +8,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        min: [1]
+        min: 1
       }
     },
     //Last name
@@ -16,7 +16,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        min: [1]
+        min: 1
       }
     },
     // The email cannot be null, and must be a proper email before creation
@@ -33,7 +33,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        min: [10],
+        min: 10,
         isNumeric: true
       }
     },

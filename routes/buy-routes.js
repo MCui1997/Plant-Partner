@@ -16,7 +16,6 @@ module.exports = function (app) {
         sold: true,
         buyerId: req.user.id
       },
-
       {
         returning: true,
         where: { id: req.params.id }

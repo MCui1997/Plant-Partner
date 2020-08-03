@@ -9,6 +9,10 @@ label {
   /* color: white; */
 }
 
+h1 {
+  text-align: center;
+}
+
 form.signup,
 form.login {
   margin-top: 30px;
@@ -120,6 +124,34 @@ box-shadow: none;
 .sell-text {
   background: transparent;
   border: transparent;
+}
+
+.queryResults {
+  justify-content: center;
+  height: auto;
+}
+
+.input {
+  width: 200px;
+  }  
+  
+.navbarSearch {
+  margin-left: 60px;
+  margin-right: 50px;
+}
+
+.searchBar {
+  width: 800px;
+  height: 40px;
+}
+
+.form-inline {
+  text-align: center;
+}
+
+.plantPic {
+  width: 200px;
+  height: 200px;
 }
 
 .for-sale {

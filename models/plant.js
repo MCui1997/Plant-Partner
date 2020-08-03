@@ -34,8 +34,8 @@ module.exports = function (sequelize, DataTypes) {
       defaultValue: false
     },
     buyerId: {
-      type: DataTypes.STRING
-    }
+      type: DataTypes.INTEGER
+    },
   });
 
   Plant.associate = function(models) {
