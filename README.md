@@ -1,5 +1,7 @@
 # Plant Partner
 
+## Disclaimer: Site is no longer being hosted on Heroku due to Heroku updates and pricing changes
+
 ## Description
 
 A website for plant connoisseurs everywhere!
